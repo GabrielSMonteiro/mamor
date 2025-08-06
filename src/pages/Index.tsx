@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { MainMenu } from '@/pages/MainMenu';
 import { Declaration } from '@/pages/Declaration';
+import { Photos } from '@/pages/Photos';
+import { BucketList } from '@/pages/BucketList';
+import { Random } from '@/pages/Random';
+import { Music } from '@/pages/Music';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,17 +31,13 @@ const Index = () => {
     case 'declaration':
       return <Declaration onBack={handleBack} />;
     case 'photos':
-      // TODO: Implementar página de fotos
-      return <div>Fotos - Em breve!</div>;
+      return <Photos onBack={handleBack} />;
     case 'bucket-list':
-      // TODO: Implementar página de lista
-      return <div>Lista de 50 Coisas - Em breve!</div>;
+      return <BucketList onBack={handleBack} />;
     case 'random':
-      // TODO: Implementar página de indecisão
-      return <div>Indecisão - Em breve!</div>;
+      return <Random onBack={handleBack} />;
     case 'music':
-      // TODO: Implementar página de música
-      return <div>Música - Em breve!</div>;
+      return <Music onBack={handleBack} />;
     default:
       return <MainMenu onNavigate={handleNavigate} />;
   }
