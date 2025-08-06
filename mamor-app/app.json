@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "Mamor",
+    "slug": "mamor-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FF69B4"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourname.mamor"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#FF69B4"
+      },
+      "package": "com.yourname.mamor",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_MEDIA_IMAGES"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/icon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O app acessa suas fotos para você adicionar memórias especiais.",
+          "cameraPermission": "O app acessa a câmera para você criar novas memórias."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "O app acessa a galeria para salvar suas fotos especiais.",
+          "savePhotosPermission": "O app salva fotos na sua galeria.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ]
+  }
+}
