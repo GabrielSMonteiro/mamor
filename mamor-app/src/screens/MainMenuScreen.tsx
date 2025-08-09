@@ -108,7 +108,7 @@ export default function MainMenuScreen({ navigation }: NavigationProps) {
     },
     {
       icon: "list",
-      title: "50 Coisas",
+      title: "Atividades",
       description: "Lista de coisas que queremos fazer juntos",
       page: "BucketList",
       colors: ["#4299E1", "#9F7AEA"],

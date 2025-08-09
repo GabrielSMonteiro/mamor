@@ -32,27 +32,252 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
   const [items, setItems] = useState<BucketItem[]>([
     {
       id: "1",
-      text: "Jantar no restaurante mais romântico de Brasília",
+      text: "Viajar juntos",
       completed: false,
     },
     {
       id: "2",
-      text: "Assistir o pôr do sol no Pontão do Lago Sul",
+      text: "Fazer aula de dança",
       completed: false,
     },
     {
       id: "3",
-      text: "Fazer um piquenique no Parque da Cidade",
+      text: "Ir a um show de música ao vivo",
       completed: false,
     },
     {
       id: "4",
-      text: "Visitar todos os pontos turísticos de Brasília juntos",
+      text: "Piquenique no parque",
       completed: false,
     },
     {
       id: "5",
-      text: "Fazer uma viagem de fim de semana para Pirenópolis",
+      text: "Pular de paraquedas",
+      completed: false,
+    },
+    {
+      id: "6",
+      text: "Acampar",
+      completed: false,
+    },
+    {
+      id: "7",
+      text: "Noite da massinha",
+      completed: false,
+    },
+    {
+      id: "8",
+      text: "Pintar quadros",
+      completed: false,
+    },
+    {
+      id: "9",
+      text: "Fazer cerâmicas",
+      completed: false,
+    },
+    {
+      id: "10",
+      text: "Comer uma comida muito diferente",
+      completed: false,
+    },
+    {
+      id: "11",
+      text: "Formar na faculdade",
+      completed: false,
+    },
+    {
+      id: "12",
+      text: "Patinar",
+      completed: false,
+    },
+    {
+      id: "13",
+      text: "Andar de bicicleta",
+      completed: false,
+    },
+    {
+      id: "14",
+      text: "Ir ao Cine Drive In",
+      completed: false,
+    },
+    {
+      id: "15",
+      text: "Ir ao kart",
+      completed: false,
+    },
+    {
+      id: "16",
+      text: "Sair para beber",
+      completed: false,
+    },
+    {
+      id: "17",
+      text: "Ir a praia",
+      completed: false,
+    },
+    {
+      id: "18",
+      text: "Observar as estrelas",
+      completed: false,
+    },
+    {
+      id: "19",
+      text: "Show do planetário",
+      completed: false,
+    },
+    {
+      id: "20",
+      text: "Ir ao zoológico",
+      completed: false,
+    },
+    {
+      id: "21",
+      text: "Ir ao aquário",
+      completed: false,
+    },
+    {
+      id: "22",
+      text: "Andar de caiaque",
+      completed: false,
+    },
+    {
+      id: "23",
+      text: "Ir a festa do morango",
+      completed: false,
+    },
+    {
+      id: "24",
+      text: "Cozinhar juntos",
+      completed: false,
+    },
+    {
+      id: "25",
+      text: "Ir ao parque de diversões",
+      completed: false,
+    },
+    {
+      id: "26",
+      text: "Fazer um passeio de balão",
+      completed: false,
+    },
+    {
+      id: "27",
+      text: "Ir a um jantar romântico",
+      completed: false,
+    },
+    {
+      id: "28",
+      text: "Maratonar filmes",
+      completed: false,
+    },
+    {
+      id: "29",
+      text: "Jogar boliche",
+      completed: false,
+    },
+    {
+      id: "30",
+      text: "Fazer um jardim",
+      completed: false,
+    },
+    {
+      id: "31",
+      text: "Stand up paddle",
+      completed: false,
+    },
+    {
+      id: "32",
+      text: "Mergulho",
+      completed: false,
+    },
+    {
+      id: "33",
+      text: "Montar um quebra-cabeça",
+      completed: false,
+    },
+    {
+      id: "34",
+      text: "Noite do fondue",
+      completed: false,
+    },
+    {
+      id: "35",
+      text: "Escape room",
+      completed: false,
+    },
+    {
+      id: "36",
+      text: "Ir a um karaokê",
+      completed: false,
+    },
+    {
+      id: "37",
+      text: "Casar",
+      completed: false,
+    },
+    {
+      id: "38",
+      text: "Morar juntos",
+      completed: false,
+    },
+    {
+      id: "39",
+      text: "Ter um beagle",
+      completed: false,
+    },
+    {
+      id: "40",
+      text: "Ter 3 animais de estimação diferentes",
+      completed: false,
+    },
+    {
+      id: "41",
+      text: "Fazer um passeio de barco",
+      completed: false,
+    },
+    {
+      id: "42",
+      text: "Tirar fotos em um ponto turístico famoso",
+      completed: false,
+    },
+    {
+      id: "43",
+      text: "Fazer trilha juntos",
+      completed: false,
+    },
+    {
+      id: "44",
+      text: "Passar um dia em um spa",
+      completed: false,
+    },
+    {
+      id: "45",
+      text: "Ir a um festival gastronômico",
+      completed: false,
+    },
+    {
+      id: "46",
+      text: "Jogar jogos de tabuleiro",
+      completed: false,
+    },
+    {
+      id: "47",
+      text: "Visitar uma vinícola",
+      completed: false,
+    },
+    {
+      id: "48",
+      text: "Ir a outro país juntos",
+      completed: false,
+    },
+    {
+      id: "49",
+      text: "Sair para estudar juntos",
+      completed: false,
+    },
+    {
+      id: "50",
+      text: "Namorar",
       completed: false,
     },
   ]);
