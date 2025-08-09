@@ -21,7 +21,7 @@ interface Song {
   artist: string;
   album?: string;
   cover: string;
-  spotifyUrl: string;
+  youtubeMusicUrl: string; // ✅ Mudado de spotifyUrl para youtubeMusicUrl
   reason: string;
   dateAdded: string;
 }
@@ -34,7 +34,7 @@ export default function MusicScreen({ navigation }: any) {
       artist: "Ed Sheeran",
       album: "÷ (Divide)",
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
-      spotifyUrl: "https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v",
+      youtubeMusicUrl: "https://music.youtube.com/search?q=ed+sheeran+perfect", // ✅ YouTube Music
       reason: "Nossa música do primeiro encontro",
       dateAdded: "2024-01-01",
     },
@@ -44,7 +44,8 @@ export default function MusicScreen({ navigation }: any) {
       artist: "John Legend",
       album: "Love in the Future",
       cover: "https://via.placeholder.com/150x150/9F7AEA/FFFFFF?text=♪",
-      spotifyUrl: "https://open.spotify.com/track/3U4isOIWM3VvDubwSI3y7a",
+      youtubeMusicUrl:
+        "https://music.youtube.com/search?q=john+legend+all+of+me", // ✅ YouTube Music
       reason: "Me lembra do seu sorriso",
       dateAdded: "2024-01-15",
     },
@@ -54,7 +55,8 @@ export default function MusicScreen({ navigation }: any) {
       artist: "Ed Sheeran",
       album: "x (Multiply)",
       cover: "https://via.placeholder.com/150x150/4299E1/FFFFFF?text=♪",
-      spotifyUrl: "https://open.spotify.com/track/lp7lVi5SHSkTp4ep34s3y2",
+      youtubeMusicUrl:
+        "https://music.youtube.com/search?q=ed+sheeran+thinking+out+loud", // ✅ YouTube Music
       reason: "Para quando dançamos juntos",
       dateAdded: "2024-02-01",
     },
@@ -68,25 +70,25 @@ export default function MusicScreen({ navigation }: any) {
     artist: "",
     album: "",
     reason: "",
-    spotifyUrl: "",
+    youtubeMusicUrl: "", // ✅ Mudado para youtubeMusicUrl
   });
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingSong, setEditingSong] = useState<Song | null>(null);
 
-  const handlePlayPause = (songId: string, spotifyUrl: string) => {
+  const handlePlayPause = (songId: string, youtubeMusicUrl: string) => {
     if (currentPlaying === songId) {
       setCurrentPlaying(null);
     } else {
       setCurrentPlaying(songId);
 
-      // Tentar abrir no Spotify
-      if (spotifyUrl && spotifyUrl !== "#") {
-        Linking.canOpenURL(spotifyUrl)
+      // ✅ Tentar abrir no YouTube Music
+      if (youtubeMusicUrl && youtubeMusicUrl !== "#") {
+        Linking.canOpenURL(youtubeMusicUrl)
           .then((supported) => {
             if (supported) {
-              Linking.openURL(spotifyUrl);
+              Linking.openURL(youtubeMusicUrl);
             } else {
-              Alert.alert("Erro", "Não foi possível abrir o Spotify");
+              Alert.alert("Erro", "Não foi possível abrir o YouTube Music");
             }
           })
           .catch(() => {
@@ -104,7 +106,7 @@ export default function MusicScreen({ navigation }: any) {
         artist: newSong.artist,
         album: newSong.album,
         cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
-        spotifyUrl: newSong.spotifyUrl || "#",
+        youtubeMusicUrl: newSong.youtubeMusicUrl || "#", // ✅ Mudado
         reason: newSong.reason,
         dateAdded: new Date().toISOString().split("T")[0],
       };
@@ -115,7 +117,7 @@ export default function MusicScreen({ navigation }: any) {
         artist: "",
         album: "",
         reason: "",
-        spotifyUrl: "",
+        youtubeMusicUrl: "", // ✅ Mudado
       });
       setShowAddModal(false);
 
@@ -223,7 +225,7 @@ export default function MusicScreen({ navigation }: any) {
                   styles.controlButton,
                   currentPlaying === song.id && styles.playingButton,
                 ]}
-                onPress={() => handlePlayPause(song.id, song.spotifyUrl)}
+                onPress={() => handlePlayPause(song.id, song.youtubeMusicUrl)}
               >
                 <Ionicons
                   name={currentPlaying === song.id ? "pause" : "play"}
@@ -232,12 +234,13 @@ export default function MusicScreen({ navigation }: any) {
                 />
               </TouchableOpacity>
 
-              {song.spotifyUrl && song.spotifyUrl !== "#" && (
+              {/* ✅ CORRIGIDO: Ícone do YouTube correto */}
+              {song.youtubeMusicUrl && song.youtubeMusicUrl !== "#" && (
                 <TouchableOpacity
                   style={styles.controlButton}
-                  onPress={() => Linking.openURL(song.spotifyUrl)}
+                  onPress={() => Linking.openURL(song.youtubeMusicUrl)}
                 >
-                  <Ionicons name="logo-spotify" size={16} color="#1DB954" />
+                  <Ionicons name="logo-youtube" size={16} color="#FF0000" />
                 </TouchableOpacity>
               )}
             </View>
@@ -359,10 +362,10 @@ export default function MusicScreen({ navigation }: any) {
             </View>
           )}
 
-          {/* Spotify Info */}
+          {/* YouTube Music Info */}
           <View style={styles.infoCard}>
             <Text style={styles.infoText}>
-              💡 Dica: Cole o link do Spotify para reprodução direta
+              💡 Dica: Cole o link do YouTube Music para reprodução direta
             </Text>
           </View>
         </ScrollView>
@@ -415,11 +418,11 @@ export default function MusicScreen({ navigation }: any) {
                 />
                 <TextInput
                   style={styles.modalInput}
-                  value={newSong.spotifyUrl}
-                  onChangeText={(text) =>
-                    setNewSong({ ...newSong, spotifyUrl: text })
+                  value={newSong.youtubeMusicUrl} // ✅ Mudado
+                  onChangeText={
+                    (text) => setNewSong({ ...newSong, youtubeMusicUrl: text }) // ✅ Mudado
                   }
-                  placeholder="Link do Spotify (opcional)"
+                  placeholder="Link do YouTube Music (opcional)"
                 />
               </ScrollView>
 
@@ -433,7 +436,7 @@ export default function MusicScreen({ navigation }: any) {
                       artist: "",
                       album: "",
                       reason: "",
-                      spotifyUrl: "",
+                      youtubeMusicUrl: "", // ✅ Mudado
                     });
                   }}
                 >
@@ -506,13 +509,14 @@ export default function MusicScreen({ navigation }: any) {
                 />
                 <TextInput
                   style={styles.modalInput}
-                  value={editingSong?.spotifyUrl || ""}
+                  value={editingSong?.youtubeMusicUrl || ""} // ✅ Mudado
                   onChangeText={(text) =>
-                    setEditingSong((prev) =>
-                      prev ? { ...prev, spotifyUrl: text } : null
+                    setEditingSong(
+                      (prev) =>
+                        prev ? { ...prev, youtubeMusicUrl: text } : null // ✅ Mudado
                     )
                   }
-                  placeholder="Link do Spotify (opcional)"
+                  placeholder="Link do YouTube Music (opcional)"
                 />
               </ScrollView>
 
@@ -541,6 +545,7 @@ export default function MusicScreen({ navigation }: any) {
   );
 }
 
+// ✅ Estilos permanecem os mesmos
 const styles = StyleSheet.create({
   container: {
     flex: 1,

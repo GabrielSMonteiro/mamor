@@ -14,9 +14,9 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
-import * as FileSystem from 'expo-file-system';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { NavigationProps } from '../types/navigation';
+import * as FileSystem from "expo-file-system";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import type { NavigationProps } from "../types/navigation";
 
 interface BucketItem {
   id: string;
@@ -26,7 +26,7 @@ interface BucketItem {
   photoUrl?: string;
 }
 
-const STORAGE_KEY = 'mamor_bucket_list';
+const STORAGE_KEY = "mamor_bucket_list";
 
 export default function BucketListScreen({ navigation }: NavigationProps) {
   const [items, setItems] = useState<BucketItem[]>([
@@ -63,7 +63,7 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
   const [editText, setEditText] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  
+
   // ✅ NOVOS ESTADOS para modal de foto
   const [showPhotoModal, setShowPhotoModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
@@ -80,25 +80,25 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
   const saveBucketList = useCallback(async (itemsToSave: BucketItem[]) => {
     try {
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(itemsToSave));
-      console.log('✅ Bucket list salva no AsyncStorage');
+      console.log("✅ Bucket list salva no AsyncStorage");
     } catch (error) {
-      console.error('❌ Erro ao salvar bucket list:', error);
+      console.error("❌ Erro ao salvar bucket list:", error);
     }
   }, []);
 
   const loadBucketList = async () => {
     try {
-      console.log('📱 Carregando bucket list do AsyncStorage...');
+      console.log("📱 Carregando bucket list do AsyncStorage...");
       const savedItems = await AsyncStorage.getItem(STORAGE_KEY);
       if (savedItems) {
         const parsedItems = JSON.parse(savedItems);
         console.log(`✅ ${parsedItems.length} itens carregados`);
         setItems(parsedItems);
       } else {
-        console.log('📝 Nenhum item salvo encontrado, usando itens padrão');
+        console.log("📝 Nenhum item salvo encontrado, usando itens padrão");
       }
     } catch (error) {
-      console.error('❌ Erro ao carregar bucket list:', error);
+      console.error("❌ Erro ao carregar bucket list:", error);
     }
   };
 
@@ -109,21 +109,21 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
         text: newItemText.trim(),
         completed: false,
       };
-      
-      setItems(prevItems => {
+
+      setItems((prevItems) => {
         const updatedItems = [...prevItems, newItem];
         saveBucketList(updatedItems);
         return updatedItems;
       });
-      
+
       setNewItemText("");
       setShowAddModal(false);
-      Alert.alert('Sucesso! ✨', 'Nova ideia adicionada à lista!');
+      Alert.alert("Sucesso! ✨", "Nova ideia adicionada à lista!");
     }
   };
 
   const handleToggleComplete = (itemId: string) => {
-    setItems(prevItems => {
+    setItems((prevItems) => {
       const updatedItems = prevItems.map((item) => {
         if (item.id === itemId) {
           const isCompleting = !item.completed;
@@ -150,7 +150,7 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
         }
         return item;
       });
-      
+
       saveBucketList(updatedItems);
       return updatedItems;
     });
@@ -158,10 +158,11 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
 
   const handleAddPhoto = async (itemId: string) => {
     try {
-      console.log('📸 Iniciando seleção de foto para bucket list...');
-      
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      console.log('🔐 Status da permissão:', status);
+      console.log("📸 Iniciando seleção de foto para bucket list...");
+
+      const { status } =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      console.log("🔐 Status da permissão:", status);
 
       if (status !== "granted") {
         Alert.alert(
@@ -172,49 +173,47 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
       }
 
       setIsLoading(true);
-      console.log('🖼️ Abrindo galeria...');
-      
+      console.log("🖼️ Abrindo galeria...");
+
       const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ['images'],
+        mediaTypes: ["images"],
         allowsEditing: true,
         aspect: [4, 3],
         quality: 1,
       });
 
-      console.log('📋 Resultado da seleção:', result);
+      console.log("📋 Resultado da seleção:", result);
 
       if (!result.canceled && result.assets && result.assets.length > 0) {
         const selectedUri = result.assets[0].uri;
-        console.log('✅ Imagem selecionada:', selectedUri);
+        console.log("✅ Imagem selecionada:", selectedUri);
 
         // Copiar imagem para diretório permanente
         const fileName = `bucket_photo_${Date.now()}.jpg`;
         const newUri = `${FileSystem.documentDirectory}${fileName}`;
-        
+
         await FileSystem.copyAsync({
           from: selectedUri,
           to: newUri,
         });
 
-        console.log('✅ Imagem copiada para:', newUri);
+        console.log("✅ Imagem copiada para:", newUri);
 
-        setItems(prevItems => {
+        setItems((prevItems) => {
           const updatedItems = prevItems.map((item) =>
-            item.id === itemId
-              ? { ...item, photoUrl: newUri }
-              : item
+            item.id === itemId ? { ...item, photoUrl: newUri } : item
           );
           saveBucketList(updatedItems);
           return updatedItems;
         });
 
-        Alert.alert('Sucesso! 📸', 'Foto adicionada como comprovação!');
+        Alert.alert("Sucesso! 📸", "Foto adicionada como comprovação!");
       } else {
-        console.log('❌ Seleção de imagem cancelada');
+        console.log("❌ Seleção de imagem cancelada");
       }
     } catch (error) {
-      console.error('❌ Erro ao selecionar foto:', error);
-      Alert.alert('Erro', 'Não foi possível adicionar a foto.');
+      console.error("❌ Erro ao selecionar foto:", error);
+      Alert.alert("Erro", "Não foi possível adicionar a foto.");
     } finally {
       setIsLoading(false);
     }
@@ -233,17 +232,17 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
           onPress: async () => {
             try {
               // Encontrar o item e deletar foto
-              const item = items.find(item => item.id === itemId);
-              if (item?.photoUrl && item.photoUrl.startsWith('file://')) {
-                await FileSystem.deleteAsync(item.photoUrl, { idempotent: true });
-                console.log('✅ Foto deletada:', item.photoUrl);
+              const item = items.find((item) => item.id === itemId);
+              if (item?.photoUrl && item.photoUrl.startsWith("file://")) {
+                await FileSystem.deleteAsync(item.photoUrl, {
+                  idempotent: true,
+                });
+                console.log("✅ Foto deletada:", item.photoUrl);
               }
-              
-              setItems(prevItems => {
+
+              setItems((prevItems) => {
                 const updatedItems = prevItems.map((item) =>
-                  item.id === itemId
-                    ? { ...item, photoUrl: undefined }
-                    : item
+                  item.id === itemId ? { ...item, photoUrl: undefined } : item
                 );
                 saveBucketList(updatedItems);
                 return updatedItems;
@@ -251,10 +250,10 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
 
               setShowPhotoModal(false);
               setPhotoActions(null);
-              Alert.alert('Sucesso! 🗑️', 'Foto removida com sucesso!');
+              Alert.alert("Sucesso! 🗑️", "Foto removida com sucesso!");
             } catch (error) {
-              console.error('❌ Erro ao remover foto:', error);
-              Alert.alert('Erro', 'Não foi possível remover a foto.');
+              console.error("❌ Erro ao remover foto:", error);
+              Alert.alert("Erro", "Não foi possível remover a foto.");
             }
           },
         },
@@ -264,21 +263,17 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
 
   // ✅ NOVA FUNÇÃO: Trocar foto
   const handleChangePhoto = async (itemId: string) => {
-    Alert.alert(
-      "Trocar Foto",
-      "Deseja selecionar uma nova foto?",
-      [
-        { text: "Cancelar", style: "cancel" },
-        {
-          text: "Trocar",
-          onPress: () => {
-            setShowPhotoModal(false);
-            setPhotoActions(null);
-            handleAddPhoto(itemId);
-          },
+    Alert.alert("Trocar Foto", "Deseja selecionar uma nova foto?", [
+      { text: "Cancelar", style: "cancel" },
+      {
+        text: "Trocar",
+        onPress: () => {
+          setShowPhotoModal(false);
+          setPhotoActions(null);
+          handleAddPhoto(itemId);
         },
-      ]
-    );
+      },
+    ]);
   };
 
   // ✅ NOVA FUNÇÃO: Abrir modal de foto
@@ -290,18 +285,18 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
 
   const handleEditItem = () => {
     if (editText.trim() && editingId) {
-      setItems(prevItems => {
+      setItems((prevItems) => {
         const updatedItems = prevItems.map((item) =>
           item.id === editingId ? { ...item, text: editText.trim() } : item
         );
         saveBucketList(updatedItems);
         return updatedItems;
       });
-      
+
       setEditingId(null);
       setEditText("");
       setShowEditModal(false);
-      Alert.alert('Sucesso! ✏️', 'Item editado com sucesso!');
+      Alert.alert("Sucesso! ✏️", "Item editado com sucesso!");
     }
   };
 
@@ -317,21 +312,28 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
           onPress: async () => {
             try {
               // Encontrar o item e deletar foto se existir
-              const itemToDelete = items.find(item => item.id === itemId);
-              if (itemToDelete?.photoUrl && itemToDelete.photoUrl.startsWith('file://')) {
-                await FileSystem.deleteAsync(itemToDelete.photoUrl, { idempotent: true });
-                console.log('✅ Foto deletada:', itemToDelete.photoUrl);
+              const itemToDelete = items.find((item) => item.id === itemId);
+              if (
+                itemToDelete?.photoUrl &&
+                itemToDelete.photoUrl.startsWith("file://")
+              ) {
+                await FileSystem.deleteAsync(itemToDelete.photoUrl, {
+                  idempotent: true,
+                });
+                console.log("✅ Foto deletada:", itemToDelete.photoUrl);
               }
-              
-              setItems(prevItems => {
-                const updatedItems = prevItems.filter((item) => item.id !== itemId);
+
+              setItems((prevItems) => {
+                const updatedItems = prevItems.filter(
+                  (item) => item.id !== itemId
+                );
                 saveBucketList(updatedItems);
                 return updatedItems;
               });
 
-              Alert.alert('Removido! 🗑️', 'Item removido da lista!');
+              Alert.alert("Removido! 🗑️", "Item removido da lista!");
             } catch (error) {
-              console.error('❌ Erro ao deletar item:', error);
+              console.error("❌ Erro ao deletar item:", error);
             }
           },
         },
@@ -418,13 +420,16 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
             </TouchableOpacity>
           ) : (
             <TouchableOpacity
-              style={[styles.addPhotoButton, isLoading && styles.disabledButton]}
+              style={[
+                styles.addPhotoButton,
+                isLoading && styles.disabledButton,
+              ]}
               onPress={() => handleAddPhoto(item.id)}
               disabled={isLoading}
             >
               <Ionicons name="camera-outline" size={20} color="#FF69B4" />
               <Text style={styles.addPhotoText}>
-                {isLoading ? 'Processando...' : 'Adicionar Foto de Comprovação'}
+                {isLoading ? "Processando..." : "Adicionar Foto de Comprovação"}
               </Text>
             </TouchableOpacity>
           )}
@@ -504,13 +509,13 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
         <Modal visible={showPhotoModal} transparent animationType="fade">
           <View style={styles.photoModalOverlay}>
             {selectedPhoto && (
-              <Image 
-                source={{ uri: selectedPhoto }} 
-                style={styles.fullscreenPhoto} 
+              <Image
+                source={{ uri: selectedPhoto }}
+                style={styles.fullscreenPhoto}
                 resizeMode="contain"
               />
             )}
-            
+
             {/* Botões de ação da foto */}
             <View style={styles.photoModalActions}>
               <TouchableOpacity
@@ -520,7 +525,7 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
                 <Ionicons name="camera-outline" size={20} color="#FFFFFF" />
                 <Text style={styles.photoActionText}>Trocar</Text>
               </TouchableOpacity>
-              
+
               <TouchableOpacity
                 style={[styles.photoActionButton, styles.deletePhotoButton]}
                 onPress={() => photoActions && handleRemovePhoto(photoActions)}
@@ -558,7 +563,7 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
                 style={styles.modalInput}
                 value={newItemText}
                 onChangeText={setNewItemText}
-                placeholder="O que vocês querem fazer juntos?"
+                placeholder="O que a gente vai fazer juntos?"
                 multiline
                 maxLength={200}
               />
@@ -574,7 +579,11 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
                   <Text style={styles.cancelButtonText}>Cancelar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={[styles.modalButton, styles.addModalButton, isLoading && styles.disabledButton]}
+                  style={[
+                    styles.modalButton,
+                    styles.addModalButton,
+                    isLoading && styles.disabledButton,
+                  ]}
                   onPress={handleAddItem}
                   disabled={isLoading}
                 >
@@ -616,7 +625,11 @@ export default function BucketListScreen({ navigation }: NavigationProps) {
                   <Text style={styles.cancelButtonText}>Cancelar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={[styles.modalButton, styles.addModalButton, isLoading && styles.disabledButton]}
+                  style={[
+                    styles.modalButton,
+                    styles.addModalButton,
+                    isLoading && styles.disabledButton,
+                  ]}
                   onPress={handleEditItem}
                   disabled={isLoading}
                 >
@@ -819,7 +832,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontWeight: "500",
   },
-  
+
   // ✅ NOVOS ESTILOS: Modal de foto
   photoModalOverlay: {
     flex: 1,

@@ -63,20 +63,23 @@ export default function TimeCounter({
   }, [startDate]);
 
   if (compact) {
-    // Versão compacta horizontal
+    // ✅ VERSÃO COMPACTA: Uma linha só, anos aparecem apenas se > 0
     return (
       <View style={styles.compactContainer}>
-        <LinearGradient
-          colors={["#EC4899", "#BE185D"]}
-          style={styles.timeCard}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-        >
-          <Text style={styles.timeNumber}>
-            {timeElapsed.years.toString().padStart(2, "0")}
-          </Text>
-          <Text style={styles.timeLabel}>Anos</Text>
-        </LinearGradient>
+        {/* ✅ Só mostra anos se for maior que 0 */}
+        {timeElapsed.years > 0 && (
+          <LinearGradient
+            colors={["#EC4899", "#BE185D"]}
+            style={styles.timeCard}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+          >
+            <Text style={styles.timeNumber}>
+              {timeElapsed.years.toString().padStart(2, "0")}
+            </Text>
+            <Text style={styles.timeLabel}>Anos</Text>
+          </LinearGradient>
+        )}
 
         <LinearGradient
           colors={["#EC4899", "#BE185D"]}
@@ -141,60 +144,73 @@ export default function TimeCounter({
     );
   }
 
-  // Versão grid normal
+  // ✅ VERSÃO GRID: Também com anos condicionais e layout otimizado
+  const timeUnits = [
+    ...(timeElapsed.years > 0
+      ? [{ value: timeElapsed.years, label: "Anos" }]
+      : []),
+    { value: timeElapsed.months, label: "Meses" },
+    { value: timeElapsed.days, label: "Dias" },
+    { value: timeElapsed.hours, label: "Horas" },
+    { value: timeElapsed.minutes, label: "Min" },
+    { value: timeElapsed.seconds, label: "Seg" },
+  ];
+
+  // ✅ Layout dinâmico baseado na quantidade de unidades
+  const getGridLayout = (count: number) => {
+    if (count === 5)
+      return {
+        rows: [
+          [0, 1],
+          [2, 3, 4],
+        ],
+      }; // Sem anos
+    if (count === 6)
+      return {
+        rows: [
+          [0, 1, 2],
+          [3, 4, 5],
+        ],
+      }; // Com anos
+    return { rows: [[0, 1], [2, 3], [4]] }; // Fallback
+  };
+
+  const layout = getGridLayout(timeUnits.length);
+
   return (
     <View style={styles.gridContainer}>
-      <View style={styles.gridRow}>
-        <View style={styles.gridTimeCard}>
-          <Text style={styles.gridTimeNumber}>{timeElapsed.years}</Text>
-          <Text style={styles.gridTimeLabel}>Anos</Text>
+      {layout.rows.map((row, rowIndex) => (
+        <View key={rowIndex} style={styles.gridRow}>
+          {row.map((unitIndex) => {
+            const unit = timeUnits[unitIndex];
+            return (
+              <View key={unitIndex} style={styles.gridTimeCard}>
+                <Text style={styles.gridTimeNumber}>{unit.value}</Text>
+                <Text style={styles.gridTimeLabel}>{unit.label}</Text>
+              </View>
+            );
+          })}
         </View>
-        <View style={styles.gridTimeCard}>
-          <Text style={styles.gridTimeNumber}>{timeElapsed.months}</Text>
-          <Text style={styles.gridTimeLabel}>Meses</Text>
-        </View>
-      </View>
-
-      <View style={styles.gridRow}>
-        <View style={styles.gridTimeCard}>
-          <Text style={styles.gridTimeNumber}>{timeElapsed.days}</Text>
-          <Text style={styles.gridTimeLabel}>Dias</Text>
-        </View>
-        <View style={styles.gridTimeCard}>
-          <Text style={styles.gridTimeNumber}>{timeElapsed.hours}</Text>
-          <Text style={styles.gridTimeLabel}>Horas</Text>
-        </View>
-      </View>
-
-      <View style={styles.gridRow}>
-        <View style={styles.gridTimeCard}>
-          <Text style={styles.gridTimeNumber}>{timeElapsed.minutes}</Text>
-          <Text style={styles.gridTimeLabel}>Min</Text>
-        </View>
-        <View style={styles.gridTimeCard}>
-          <Text style={styles.gridTimeNumber}>{timeElapsed.seconds}</Text>
-          <Text style={styles.gridTimeLabel}>Seg</Text>
-        </View>
-      </View>
+      ))}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  // Estilos para versão compacta horizontal
+  // ✅ ESTILOS PARA VERSÃO COMPACTA (uma linha)
   compactContainer: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    gap: 8,
+    gap: 6, // ✅ Gap reduzido para caber melhor
     paddingHorizontal: 4,
-    flexWrap: "wrap",
+    flexWrap: "nowrap", // ✅ Força uma linha só
   },
   timeCard: {
     borderRadius: 12,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    minWidth: 56,
+    paddingVertical: 10, // ✅ Padding reduzido
+    paddingHorizontal: 8, // ✅ Padding reduzido
+    minWidth: 48, // ✅ Largura mínima reduzida
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -206,18 +222,18 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   timeNumber: {
-    fontSize: 18,
+    fontSize: 16, // ✅ Fonte reduzida
     fontWeight: "bold",
     color: "#FFFFFF",
   },
   timeLabel: {
-    fontSize: 10,
+    fontSize: 9, // ✅ Fonte reduzida
     color: "#FDE2E7",
     fontWeight: "500",
     marginTop: 2,
   },
 
-  // Estilos para versão grid (não compacta)
+  // ✅ ESTILOS PARA VERSÃO GRID (layout dinâmico)
   gridContainer: {
     backgroundColor: "rgba(255, 255, 255, 0.95)",
     borderRadius: 16,
@@ -235,6 +251,7 @@ const styles = StyleSheet.create({
   gridRow: {
     flexDirection: "row",
     gap: 8,
+    justifyContent: "center", // ✅ Centraliza os cards
   },
   gridTimeCard: {
     flex: 1,
@@ -245,6 +262,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderWidth: 1,
     borderColor: "rgba(255, 105, 180, 0.2)",
+    maxWidth: 80, // ✅ Largura máxima para manter proporção
   },
   gridTimeNumber: {
     fontSize: 20,
