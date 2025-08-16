@@ -21,11 +21,11 @@ export default function DeclarationScreen({ navigation }: any) {
 
   // Declarações de amor - podem ser expandidas
   const declarations = [
-    "Você é a razão do meu sorriso todos os dias. Cada momento ao seu lado é um presente que guardo no coração. 💕",
-    "Quando penso em você, meu coração se enche de uma felicidade que não consigo explicar. Você é minha paz e minha alegria. 🌸",
-    "Seus olhos são como estrelas que iluminam meus dias mais escuros. Obrigado por ser minha luz. ✨",
-    "Cada dia ao seu lado é uma nova aventura cheia de amor e descobertas. Você torna tudo mais especial. 🦋",
-    "Seu sorriso tem o poder de transformar qualquer dia ruim em algo maravilhoso. Você é minha felicidade. 😊",
+    "Mamor, quando a gente decidiu que iriamos ficar juntos eu não pude imaginar o quão especial e complicado poderia ser, mas poder olhar nos seus olhos todo dia, sentir a sua pele e beijar sua boca faz tudo ter valido a pena e eu refaria tudo de novo. 💕",
+    "Dormir e acordar do seu lado é a coisa mais especial que tem para mim, não importa se é em um hotel em Jampa, nas nossas casas ou no banco de trás do seu carro, te ver descansada, segura e sendo apenas você (a pessoa mais incrível do mundo) é suficiente para alegrar o meu dia. 🌸",
+    "Você é a parte mais bonita da minha vida, ver o seu sorriso, o brilho no seu olhar ✨",
+    " 🦋",
+    "Seu sorriso tem o poder de transformar qualquer dia ruim em um dia incrível, mamor você é minha felicidade. 😊",
     "Com você aprendi que o amor verdadeiro não é apenas um sentimento, é uma escolha que faço todos os dias. 💖",
     "Você transformou minha vida em uma história de amor mais bonita do que eu poderia imaginar. 📖",
     "Cada manhã ao seu lado é um novo começo, cada noite é uma promessa de que estaremos juntos amanhã. 🌅",
