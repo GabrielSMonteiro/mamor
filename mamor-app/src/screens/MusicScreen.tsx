@@ -37,7 +37,7 @@ export default function MusicScreen({ navigation }: any) {
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=M%C3%A5neskin+I+WANNA+BE+YOUR+SLAVE",
       reason:
-        "Essa música me lembra você pelo fato de direto escutar ela quando estou com você no carro e pelo fato de eu querer ser seu, independente de qualquer coisa",
+        "Essa música me lembra você pelo fato de direto escutar ela quando estou com você no carro e pelo fato de eu querer ser seu, independente de qualquer coisa. E EU SOU UM GANGSTA",
       dateAdded: "2025-08-16",
     },
     {
@@ -145,7 +145,7 @@ export default function MusicScreen({ navigation }: any) {
         "https://music.youtube.com/search?q=Tribalistas+Velha+Inf%C3%A2ncia",
       reason:
         "Cada verso me lembra de você, me lembra o quanto a gente consegue ser adultos e crianças ao mesmo tempo estando juntos, podemos correr, dançar, cantar e que quando não estou com você não estou completo, eu gosto de você, e gosto de ficar com você, meu riso é tão feliz contigo, meu melhor amigo é mamor",
-      dateAdded: "2025-18-16",
+      dateAdded: "2025-08-16",
     },
     {
       id: "11",
@@ -157,7 +157,7 @@ export default function MusicScreen({ navigation }: any) {
         "https://music.youtube.com/search?q=Yago+Oproprio+ft.+R%C3%B4+Rosa+Imprevisto",
       reason:
         "'De manhã, de madrugada, te quero também de tarde quando nós fica junto, somo inimigo do fim'",
-      dateAdded: "2025-18-16",
+      dateAdded: "2025-08-16",
     },
     {
       id: "12",
@@ -168,7 +168,7 @@ export default function MusicScreen({ navigation }: any) {
       youtubeMusicUrl: "https://music.youtube.com/search?q=Cazuza+Exagerado",
       reason:
         "Acho que é a música que eu mais canto para você, porque eu sou exagerado, eu te amo demais, eu penso em você demais, eu quero você demais, eu sinto sua falta demais, eu preciso de você demais, eu fico com ciúmes demais, eu me preocupo demais, eu me importo demais, eu sofro demais, eu fico feliz demais, eu fico triste demais, eu vivo demais, eu sinto demais porque você é demais",
-      dateAdded: "2025-18-16",
+      dateAdded: "2025-08-16",
     },
     {
       id: "13",
@@ -287,7 +287,7 @@ export default function MusicScreen({ navigation }: any) {
         "https://music.youtube.com/search?q=P%C3%A9ricles+At%C3%A9+Que+Durou",
       reason:
         "Outra triste que me lembra quando eu tava mal, mas que independente de tudo eu sempre te amei e sempre vou te amar",
-      dateAdded: "2025-18-16",
+      dateAdded: "2025-08-16",
     },
     {
       id: "23",
@@ -299,7 +299,7 @@ export default function MusicScreen({ navigation }: any) {
         "https://music.youtube.com/search?q=Pixote+Nem+de+Gra%C3%A7a+%2F+Saudade+Arrega%C3%A7a",
       reason:
         "Essa me lembra o quanto você é perfeita e incrível e que eu não te trocaria por nada, nem ninguém e honestamente até hoje me pega o fato de você não entender o porquê ou como eu te amo tanto, sendo que você é mais do que eu sempre sonhei",
-      dateAdded: "2025-18-16",
+      dateAdded: "2025-08-16",
     },
     {
       id: "24",
@@ -310,7 +310,7 @@ export default function MusicScreen({ navigation }: any) {
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Turma+do+Pagode+Sua+M%C3%A3e+Vai+Me+Amar",
       reason: "Hihi",
-      dateAdded: "2025-18-16",
+      dateAdded: "2025-08-16",
     },
     {
       id: "25",
@@ -415,7 +415,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Filipe+Ret+Amor+Livre",
-      reason: "Me lembra de você sempre que escuto",
+      reason:
+        "'Quantas coisa aconteceram em pouco tempo, baby? Quantas confirmações tivemos nesses meses? Quantas histórias no carro? Nós sabe viver'",
       dateAdded: "2025-08-16",
     },
     {
@@ -426,8 +427,9 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Matheus+%26+Kauan+ft.+Gusttavo+Lima+M%C3%A1gica",
-      reason: "A letra parece ter sido escrita para nós",
-      dateAdded: "2025-18-16",
+      reason:
+        "Essa fala o quanto eu trocaria tudo por você e que ninguém ou nada mais consegue me satisfazer e me fazer feliz",
+      dateAdded: "2025-08-16",
     },
     {
       id: "35",
@@ -437,8 +439,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Wesley+Safad%C3%A3o+Part.+Matheus+e+Kauan+Meu+Cora%C3%A7%C3%A3o+Deu+Pt",
-      reason: "Tocou no nosso primeiro encontro",
-      dateAdded: "2025-18-16",
+      reason: "Er... essa é pesada né",
+      dateAdded: "2025-08-16",
     },
     {
       id: "36",
@@ -448,8 +450,9 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Matheus+%26+Kauan+Exclusividade",
-      reason: "Me faz sentir sua falta",
-      dateAdded: "2025-18-16",
+      reason:
+        "Meio autoexplicativa também, foi mais ou menos o que a gente passou com a questão de não ter exclusividade e acabar magoando e depois a gente se assumir",
+      dateAdded: "2025-08-16",
     },
     {
       id: "37",
@@ -459,7 +462,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Paramore+The+Only+Exception",
-      reason: "Lembra dos nossos momentos mais especiais",
+      reason:
+        "Você me faz acreditar no amor e como eu tenho vontade de cantar, dançar e me divertir com você",
       dateAdded: "2025-08-16",
     },
     {
@@ -470,7 +474,7 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Rihanna+ft.+JAY-Z+Umbrella",
-      reason: "A música que define nosso amor",
+      reason: "Essa música me faz feliz, então me lembra você",
       dateAdded: "2025-08-16",
     },
     {
@@ -481,7 +485,7 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Sean+Kingston+Beautiful+Girls",
-      reason: "Me transporta para nossos melhores dias",
+      reason: "Sem motivos, eu gosto muito e a sensação me lembra você",
       dateAdded: "2025-08-16",
     },
     {
@@ -492,18 +496,19 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Eminem+ft.+Rihanna+Love+The+Way+You+Lie",
-      reason: "Cada verso me lembra de você",
+      reason:
+        "Rihanna é cantora de cria!! E eu fiquei um tempo sem acreditar que você me amava pelo que aconteceu",
       dateAdded: "2025-08-16",
     },
     {
       id: "41",
-      title: "Love The Way You Lie",
-      artist: "Eminem ft. Rihanna",
+      title: "Espumas Ao Vento",
+      artist: "Fagner",
       album: "",
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
-        "https://music.youtube.com/search?q=Eminem+ft.+Rihanna+Love+The+Way+You+Lie",
-      reason: "Nossa trilha sonora do amor",
+        "https://music.youtube.com/watch?v=Fuj-y3UCb9k&si=dFRFwvOJ5gJYyT6j",
+      reason: "Lembro de você brava com a sua mãe repetindo kkkkkkkkk",
       dateAdded: "2025-08-16",
     },
     {
@@ -514,7 +519,7 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Soulja+Boy+Tell%27em+ft.+Sammie+Kiss+Me+Thru+The+Phone",
-      reason: "Me faz sonhar com nosso futuro juntos",
+      reason: "Você num me ama e num mim quer pra morar juntos",
       dateAdded: "2025-08-16",
     },
     {
@@ -525,7 +530,7 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Damiano+David+The+First+Time",
-      reason: "A música dos nossos abraços",
+      reason: "Essa me lembra a imersão",
       dateAdded: "2025-08-16",
     },
     {
@@ -536,7 +541,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Alex+Warren+Ordinary",
-      reason: "Me lembra do dia que nos conhecemos",
+      reason:
+        "Tirando o fato que eu viro cristão sempre que vejo uma foto sua, tirando o quanto você canta essa música, ela me faz lembrar você porque meu mundo mudou quando eu me apaixonei por você e ainda mais quando foi correspondido",
       dateAdded: "2025-08-16",
     },
     {
@@ -547,7 +553,7 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Baco+Exu+do+Blues+%26+Lu%C3%ADsa+Sonza+Hotel+Caro",
-      reason: "Tocava quando declarei meu amor",
+      reason: "Eu me sinto culpado as vezes por coisas que aconteceram",
       dateAdded: "2025-08-16",
     },
     {
@@ -558,8 +564,9 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Mark+Ambor+Belong+Together",
-      reason: "A canção dos nossos sorrisos",
-      dateAdded: "2025-18-16",
+      reason:
+        "'You and me belong together Like cold iced tea and warmer weather Where we lay out late underneath the pines And we still have fun when the Sun won't shine You and me belong together all the time'",
+      dateAdded: "2025-08-16",
     },
     {
       id: "47",
@@ -569,8 +576,9 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Exaltasamba+Me+Apaixonei+Pela+Pessoa+Errada",
-      reason: "Me faz lembrar dos seus olhos",
-      dateAdded: "2025-18-16",
+      reason:
+        "Meu Deus, essa me lembrava muito você quando ainda estava no seu antigo relacionamento",
+      dateAdded: "2025-08-16",
     },
     {
       id: "48",
@@ -580,8 +588,9 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Grupo+Menos+%C3%A9+Mais+e+Matheus+Fernandes+Lapada+Dela",
-      reason: "Nossa música da felicidade",
-      dateAdded: "2025-18-16",
+      reason:
+        "ME APAIXONEI POR UMA MENINA QUE TEM 1,60 m E NÃO TEM TATUAGEM NÃO",
+      dateAdded: "2025-08-16",
     },
     {
       id: "49",
@@ -591,7 +600,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Cristiano+Ara%C3%BAjo+%C3%89+com+ela+que+eu+estou",
-      reason: "A trilha dos nossos planos juntos",
+      reason:
+        "Essa me lembra você mais especificamente no momento do meu término",
       dateAdded: "2025-08-16",
     },
     {
@@ -602,7 +612,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Luan+Santana+Te+esperando",
-      reason: "Me lembra de cada 'eu te amo'",
+      reason:
+        "Eu sempre estive e sempre estarei te esperando independente do que aconteça, pensava nessa quando surgiu a ideia de não darmos certos juntos",
       dateAdded: "2025-08-16",
     },
     {
@@ -612,7 +623,8 @@ export default function MusicScreen({ navigation }: any) {
       album: "",
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl: "https://music.youtube.com/search?q=Tavin+P%C3%A9talas",
-      reason: "A música dos nossos sonhos",
+      reason:
+        "Meu Deus, essa é tão autodescritiva, quando descobri toda aquela situação com seu antigo relacionamento me senti assim além de ouvir coisas da Eduarda, enfim já foi",
       dateAdded: "2025-08-16",
     },
     {
@@ -623,7 +635,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Bee+Gees+More+Than+A+Woman",
-      reason: "Me faz lembrar do seu perfume",
+      reason:
+        "This is the only way that we should fly This is the only way to go And if I lose your love, I know I would die Oh, say you'll always be my baby, we can make it shine We can take forever, just a minute at a time, oh",
       dateAdded: "2025-08-16",
     },
     {
@@ -634,7 +647,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=James+Arthur+Say+You+Won%27t+Let+Go",
-      reason: "Nossa canção da eternidade",
+      reason:
+        "Meu Deus, essa parece que foi escrita pensando em como eu me sentia com você e meus planos futuros e o quanto eu te amo! 'I knew I loved you then, but you'd never know 'Cause I played it cool when I was scared of letting go I knew I needed you, but I never showed I wanna stay with you until we're grey and old Just say you won't let go'",
       dateAdded: "2025-08-16",
     },
     {
@@ -644,7 +658,8 @@ export default function MusicScreen({ navigation }: any) {
       album: "",
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl: "https://music.youtube.com/search?q=Coldplay+Yellow",
-      reason: "A música que aquece meu coração",
+      reason:
+        "Olhar para o céu me lembra você, principalmente quando está estrelado, acho que aos poucos está virando meu horário favorito do dia (a noite) You know I love you so?",
       dateAdded: "2025-08-16",
     },
     {
@@ -654,7 +669,7 @@ export default function MusicScreen({ navigation }: any) {
       album: "",
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl: "https://music.youtube.com/search?q=Akon+Lonely",
-      reason: "Me lembra dos nossos passeios",
+      reason: "Mamor mim abandonou",
       dateAdded: "2025-08-16",
     },
     {
@@ -665,7 +680,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=M%C3%A5neskin+The+Loneliest",
-      reason: "A canção dos nossos segredos",
+      reason:
+        "Maneskin me lembra você e ás vez me traz o sentimento que posso te perder",
       dateAdded: "2025-08-16",
     },
     {
@@ -676,7 +692,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Ali+Gatie+It%27s+You",
-      reason: "Me faz lembrar do seu sorriso",
+      reason:
+        "É você, sempre foi você, sempre é você e sempre será você o motivo da minha felicidade, o motivo de eu querer ir a faculdade, o motivo de eu te amar tanto",
       dateAdded: "2025-08-16",
     },
     {
@@ -687,8 +704,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=P%C3%A9ricles+e+Marvvila+Nosso+Amor+Quer+Paz",
-      reason: "Nossa música da cumplicidade",
-      dateAdded: "2025-18-16",
+      reason: "O confronto da razão e dos sentimentos desde que nos conhecemos",
+      dateAdded: "2025-08-16",
     },
     {
       id: "59",
@@ -698,8 +715,9 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Menos+%C3%A9+Mais+Vai+Me+Dando+Corda",
-      reason: "A trilha dos nossos risos",
-      dateAdded: "2025-18-16",
+      reason:
+        "Pagode em si me lembra você, e com essa eu penso o quanto eu quero te amar e te pertencer se você for dando corda hehe",
+      dateAdded: "2025-08-16",
     },
     {
       id: "60",
@@ -709,8 +727,9 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Z%C3%A9+Vaqueiro+Tenho+Medo",
-      reason: "Me lembra de você dormindo",
-      dateAdded: "2025-18-16",
+      reason:
+        "Eu tinha muito medo de entrar nesse relacionamento com toda a carga emocional e me machucar",
+      dateAdded: "2025-08-16",
     },
     {
       id: "61",
@@ -720,7 +739,7 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Atitude+67+Casal+Do+Ano",
-      reason: "Me faz lembrar do nosso primeiro beijo",
+      reason: "A gente é o melhor casal do mundooooo",
       dateAdded: "2025-08-16",
     },
     {
@@ -731,7 +750,8 @@ export default function MusicScreen({ navigation }: any) {
       cover: "https://via.placeholder.com/150x150/FF69B4/FFFFFF?text=♪",
       youtubeMusicUrl:
         "https://music.youtube.com/search?q=Cyndi+Lauper+Girls+Just+Want+To+Have+Fun",
-      reason: "Nossa música favorita para dançar",
+      reason:
+        "EU AMO ESSA MÚSICA E NÃO SEI PORQUÊ ME LEMBRA VOCÊ, MAS ACHO QUE TOCOU NO EXTERNA",
       dateAdded: "2025-08-16",
     },
   ]);

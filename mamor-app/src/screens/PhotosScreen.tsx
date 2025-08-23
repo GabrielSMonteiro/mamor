@@ -38,10 +38,14 @@ const STORAGE_KEY = "mamor_photos";
 const DEFAULT_IMAGES = {
   1: { source: require("../image/1.jpeg"), type: "image" as const },
   2: { source: require("../image/2.jpeg"), type: "image" as const },
-  3: { source: require("../image/4.jpeg"), type: "image" as const },
-  4: { source: require("../image/5.jpeg"), type: "image" as const },
-  5: { source: require("../image/7.jpeg"), type: "image" as const },
-  6: { source: require("../image/8.jpeg"), type: "image" as const },
+  3: { source: require("../image/5.jpeg"), type: "image" as const },
+  4: { source: require("../image/14.jpeg"), type: "image" as const },
+  5: { source: require("../image/18.jpeg"), type: "image" as const },
+  6: { source: require("../image/24.jpeg"), type: "image" as const },
+  7: { source: require("../image/32.jpeg"), type: "image" as const },
+  8: { source: require("../image/42.jpeg"), type: "image" as const },
+  9: { source: require("../image/52.jpeg"), type: "image" as const },
+  10: { source: require("../image/60.jpeg"), type: "image" as const },
 };
 
 const INITIAL_PHOTOS: Photo[] = Object.entries(DEFAULT_IMAGES).map(
