@@ -44,8 +44,9 @@ const DEFAULT_IMAGES = {
   6: { source: require("../image/24.jpeg"), type: "image" as const },
   7: { source: require("../image/32.jpeg"), type: "image" as const },
   8: { source: require("../image/42.jpeg"), type: "image" as const },
-  9: { source: require("../image/52.jpeg"), type: "image" as const },
-  10: { source: require("../image/60.jpeg"), type: "image" as const },
+  9: { source: require("../image/57.jpeg"), type: "image" as const },
+  10: { source: require("../image/59.jpeg"), type: "image" as const },
+  11: { source: require("../image/60.jpeg"), type: "image" as const },
 };
 
 const INITIAL_PHOTOS: Photo[] = Object.entries(DEFAULT_IMAGES).map(
