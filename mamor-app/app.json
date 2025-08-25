@@ -25,10 +25,12 @@
       },
       "package": "com.yourname.mamor",
       "permissions": [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE",
-        "READ_MEDIA_IMAGES"
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_MEDIA_LOCATION"
       ]
     },
     "web": {
@@ -50,7 +52,13 @@
           "isAccessMediaLocationEnabled": true
         }
       ],
-      "expo-video"
-    ]
+      "expo-video",
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "949b4f0e-ca78-4a1e-a098-e6a7bb3f276c"
+      }
+    }
   }
 }
